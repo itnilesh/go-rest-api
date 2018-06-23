@@ -114,27 +114,26 @@ func convEmployeesToResp(srvmodels *[]srvmodels.Employee) (*[]apimodels.Employee
 		empResp, _ := convEmployeeResp(&emp)
 		respList = append(respList, *empResp)
 	}
-
 	return &respList, nil
 }
 
 func convEmployeeResp(srvm *srvmodels.Employee) (*apimodels.EmployeeResp, error) {
 	addressResp, _ := convEmpAddress(srvm.Emp.Address)
-	resp := &apimodels.EmployeeResp{ID: srvm.ID, 
-		Fname: srvm.Emp.Fname, 
-		Lname: srvm.Emp.Lname, 
+	resp := &apimodels.EmployeeResp{ID: srvm.ID,
+		Fname:   srvm.Emp.Fname,
+		Lname:   srvm.Emp.Lname,
 		Address: addressResp}
 	return resp, nil
 }
 
 func convEmpAddress(srva *srvmodels.Address) (*apimodels.EmpAdress, error) {
 	resp := &apimodels.EmpAdress{
-	  HouseNumber:srva.HouseNumber,
-	  Street:srva.State,
-	  ZipCode:srva.ZipCode,
-	  District:srva.District,
-	  State:srva.State,
-	  Country:srva.Country}
+		HouseNumber: srva.HouseNumber,
+		Street:      srva.State,
+		ZipCode:     srva.ZipCode,
+		District:    srva.District,
+		State:       srva.State,
+		Country:     srva.Country}
 
 	return resp, nil
 }
