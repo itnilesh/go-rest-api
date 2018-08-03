@@ -107,3 +107,19 @@ curl -X PUT \
 ~~~
 curl -X DELETE  http://localhost:8888/employees/{id}
 ~~~
+
+### Debugging 
+
+Run command 
+~~~
+docker logs <docker-container-id>
+~~~
+Sample logs 
+~~~
+INFO[0000] Loading environment vars
+INFO[0000] Employee service congfigs                     config="Host=localhost, Port=8888"
+INFO[0000] Starting employee service....
+INFO[0000] Registerted rest end-point/employees
+INFO[0000] Registerted rest end-point/employees/{id}
+~~~
+
