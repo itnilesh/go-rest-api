@@ -114,11 +114,11 @@ curl -X DELETE  http://localhost:8888/employees/{id}
 
 You can set envirnment variable while starting container 
 ~~~
-EMP_SERVICE_LOG_LEVEL=panic|fatal|error|warn|info|debug
+EMP_SERVICE_LOGLEVEL=panic|fatal|error|warn|info|debug
 ~~~
 
 ~~~
-docker run  -e EMP_SERVICE_LOG_LEVEL=debug -it -d -p 8888:8888  salpe/employee-service
+docker run  -e EMP_SERVICE_LOGLEVEL=debug -it -d -p 8888:8888  salpe/employee-service
 ~~~
 
 Run command 
@@ -128,7 +128,7 @@ docker logs <docker-container-id>
 Sample logs 
 ~~~
 INFO[0000] Loading environment vars
-INFO[0000] Employee service congfigs                     config="Host=localhost, Port=8888"
+INFO[0000] Employee service congfigs                     config="Host=localhost, Port=8888, LogLevel=debug"
 INFO[0000] Starting employee service....
 INFO[0000] Registerted rest end-point/employees
 INFO[0000] Registerted rest end-point/employees/{id}
