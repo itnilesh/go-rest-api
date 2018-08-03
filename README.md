@@ -1,5 +1,10 @@
 # go-rest-api
+
 Sample rest apis in GO
+
+### How to run ?
+
+Pull image from https://hub.docker.com/
 
 ~~~
 docker pull salpe/employee-service
