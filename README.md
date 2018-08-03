@@ -1,6 +1,8 @@
 # go-rest-api
 
-Sample rest apis in GO
+### Objective
+
+Create sample tutorial for beginges who want to write rest based micro-services in Go. 
 
 ### How to run ?
 
@@ -45,7 +47,9 @@ curl -X GET  http://localhost:8888/employees
 ~~~
 
 
-API Docs (Will add swagger later)
+API Docs 
+Please refer swagger docs here 
+https://github.com/itnilesh/go-rest-api/blob/master/docs/api/employee-service.yaml
 
 1. Create employee 
 ~~~
