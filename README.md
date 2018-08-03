@@ -48,8 +48,11 @@ curl -X GET  http://localhost:8888/employees
 
 
 API Docs 
+
 Please refer swagger docs here 
 https://github.com/itnilesh/go-rest-api/blob/master/docs/api/employee-service.yaml
+
+Simple curl commands 
 
 1. Create employee 
 ~~~
