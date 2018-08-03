@@ -87,11 +87,11 @@ curl -X DELETE  http://localhost:8888/employees/{id}
 
 ~~~
 curl -X POST \
-  http://localhost:8888/employees \
+  http://localhost:8888/employees\{id} \
   -H 'Content-Type: application/json' \
   -d '{
 		"house_number" : "#09-5A",
-		"street" : "350 Ellis Street",
+		"street" : "350 Salpe Street",
 		"zip_code": "94043",
 		"city" : "Mountain View",
 		"district":"California",
