@@ -18,7 +18,7 @@ To build image lcoally
 1. Set up Go [https://golang.org/doc/install],  GOROOT and GOPATH
 2. Run following command
 ~~~
-go get `github.com/itnilesh/go-rest-api`
+go get github.com/itnilesh/go-rest-api
 
 ~~~
 
