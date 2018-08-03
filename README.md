@@ -2,7 +2,7 @@
 
 ### Objective
 
-Create sample tutorial for beginges who want to write rest based micro-services in Go. 
+Create sample tutorial for beginners,  who want to write rest based micro-services in Go. 
 
 ### How to run ?
 
