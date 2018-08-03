@@ -39,4 +39,8 @@ docker tag <image-id>  salpe/employee-service
 ~~~ 
 docker run  -it -d -p 8888:8888  salpe/employee-service 
 ~~~
+7. Test application is up or not , you should get empty collection
+~~~
+curl -X GET  http://localhost:8888/employees 
+~~~
 
