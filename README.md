@@ -15,7 +15,7 @@ docker run  -it -d -p 8888:8888  salpe/employee-service
 
 To build image lcoally 
 
-1. Set up Go GOROOT and GOPATH
+1. Set up Go [https://golang.org/doc/install],  GOROOT and GOPATH
 2. Run following command
 ~~~
 go get `github.com/itnilesh/go-rest-api`
