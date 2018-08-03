@@ -27,6 +27,8 @@ go get github.com/itnilesh/go-rest-api
 3.  Run following command
   ~~~
     cd $GOPATH/src/github.com/itnilesh/go-rest-api 
+    
+    dep ensure 
    ~~~
 4.  Run following command
   ~~~
