@@ -112,6 +112,15 @@ curl -X DELETE  http://localhost:8888/employees/{id}
 
 ### Debugging 
 
+You can set envirnment variable while starting container 
+~~~
+EMP_SERVICE_LOG_LEVEL=panic|fatal|error|warn|info|debug
+~~~
+
+~~~
+docker run  -e EMP_SERVICE_LOG_LEVEL=debug -it -d -p 8888:8888  salpe/employee-service
+~~~
+
 Run command 
 ~~~
 docker logs <docker-container-id>
