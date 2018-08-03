@@ -78,15 +78,11 @@ curl -X GET  http://localhost:8888/employees
 curl -X GET  http://localhost:8888/employees/{id}
 ~~~
 
-4. Delete Single Employee 
-~~~
-curl -X DELETE  http://localhost:8888/employees/{id}
-~~~
 
-5. Update Single  Employess
+4. Update Single  Employess
 
 ~~~
-curl -X POST \
+curl -X PUT \
   http://localhost:8888/employees\{id} \
   -H 'Content-Type: application/json' \
   -d '{
@@ -98,4 +94,9 @@ curl -X POST \
 		 "State" : "California",
 		 "Country":"USA"
 	}'
+~~~
+
+5. Delete Single Employee 
+~~~
+curl -X DELETE  http://localhost:8888/employees/{id}
 ~~~
