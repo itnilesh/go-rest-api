@@ -44,3 +44,58 @@ docker run  -it -d -p 8888:8888  salpe/employee-service
 curl -X GET  http://localhost:8888/employees 
 ~~~
 
+
+API Docs (Will add swagger later)
+
+1. Create employee 
+~~~
+curl -X POST \
+  http://localhost:8888/employees \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"first_name": "nilesh",
+	"last_name":"salpe",
+	"address": {
+		"house_number" : "#09-99",
+		"street" : "Upper Serangoon Road",
+		"zip_code": "536564",
+		"city" : "Singapore",
+		"district":"Singapore",
+		 "State" : "Singapore",
+		 "Country":"Singapore"
+	}
+}'
+~~~
+2. List employess 
+
+~~~
+curl -X GET  http://localhost:8888/employees 
+~~~
+
+3.  List single employee
+
+~~~
+curl -X GET  http://localhost:8888/employees/{id}
+~~~
+
+4. Delete Single Employee 
+~~~
+curl -X DELETE  http://localhost:8888/employees/{id}
+~~~
+
+5. Update Single  Employess
+
+~~~
+curl -X POST \
+  http://localhost:8888/employees \
+  -H 'Content-Type: application/json' \
+  -d '{
+		"house_number" : "#09-5A",
+		"street" : "350 Ellis Street",
+		"zip_code": "94043",
+		"city" : "Mountain View",
+		"district":"California",
+		 "State" : "California",
+		 "Country":"USA"
+	}'
+~~~
