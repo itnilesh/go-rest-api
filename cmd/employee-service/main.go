@@ -29,5 +29,5 @@ func main() {
 	router.HandleFunc("/employees/{id}", empCtr.UpdateEmployee).Methods("PUT")
 	router.HandleFunc("/employees/{id}", empCtr.DeleteEmployee).Methods("DELETE")
 
-	LOG.Fatal(http.ListenAndServe(":8000", router))
+	LOG.Fatal(http.ListenAndServe(":8888", router))
 }
