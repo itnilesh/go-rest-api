@@ -13,7 +13,7 @@ docker run  -it -d -p 8888:8888  salpe/employee-service
 
 ~~~
 
-To build image lcoally 
+To build image locally on Mac
 
 1. Set up Go [https://golang.org/doc/install],  GOROOT and GOPATH
 2. Run following command
