@@ -20,6 +20,12 @@
   version = "v1.6.2"
 
 [[projects]]
+  name = "github.com/kelseyhightower/envconfig"
+  packages = ["."]
+  revision = "f611eb38b3875cc3bd991ca91c51d06446afa14c"
+  version = "v1.3.0"
+
+[[projects]]
   name = "github.com/sirupsen/logrus"
   packages = ["."]
   revision = "c155da19408a8799da419ed3eeb0cb5db0ad5dbc"
@@ -43,6 +49,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "0de0a9fef4e9cc15f81f98672415bf58ffeec11d56a3e444ee279976a5b2202c"
+  inputs-digest = "d5b90559b634d20ffe436fdedb7d8253e70d6637f7ef60a899b4f667bdefab5a"
   solver-name = "gps-cdcl"
   solver-version = 1
