@@ -214,6 +214,14 @@ This is producer-consumer pattern , can be impleted using queuing framework like
 8. Notify user about result 
 
 
+### Authentication And Authorization 
+We some kind of authorization, nowadays OAuth2.0 is used widely. May be passing JWT token passed thought `Authorization` header and `Bearer` scheme could be OK.
+We need to build `authentication and authorization server` so that user can get token based on their username/password then same token will be used for all API communincation.
+This token will expire after some time say in 24 hours then user need to renew/re-issue the toke.
+
+For authorization , we need to define roles in token and in code we need to check those before calling psrticualr action.
+This can be easily done using spring security and bunch of annotations.
+
 
 
 
