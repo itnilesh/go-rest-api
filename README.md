@@ -151,6 +151,9 @@ We need to see ideal config for CPU/Memory to meet our concurrent users SLAs.
 ### Metrics 
 we need number fo requests per sec (throughput) and latency (time taken for single request to serve ) based on which this app will autoscale.
 
+We need to instrument code to collect metrics.
+
+
 Metrics scrapping  end-point
 
 ~~~
