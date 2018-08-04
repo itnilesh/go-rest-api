@@ -133,3 +133,51 @@ INFO[0000] Starting employee service....
 INFO[0000] Registerted rest end-point/employees
 INFO[0000] Registerted rest end-point/employees/{id}
 ~~~
+
+
+### Single Container Performance Test 
+We need to size container. It should able to serve largest request else in auto-scaler it will just keep on creating new instances without meeting the purpose.Also we need to know how many requests per second container can sustain.
+
+### Single User Performance Test
+ This also could be done using [https://github.com/tsenart/vegeta] with single attacker config.
+ In this we can increase input size progressively, till container goes out of memory or request takes very long time.
+
+### Parallel Users Performance Test
+Tool could be used is vegeta [https://github.com/tsenart/vegeta]
+We need to see ideal config for CPU/Memory to meet our concurrent users SLAs.
+
+
+
+### Metrics 
+we need number fo requests per sec (throughput) and latency (time taken for single request to server) based on which this app will autoscale.
+
+Metrics scrapping  end-point
+
+~~~
+/internal/metrics
+~~~
+
+### Auto-scaler 
+Based on metrics collected in prometheus , we will autoscale for throughput/latency numbers to meet SLAs.
+
+
+### Distributed request tracing
+We can add distributed request tracing using zipkin [https://zipkin.io/].
+
+
+### Distributed logging 
+Individual container logs need to be aggrgated and analyzed. We need tool like elastic search ELK stack [https://logz.io/learn/complete-guide-elk-stack/] for that.
+
+
+### Circuit Breaker 
+If say MongoDb service is down then better to trip circuit breaker then hitting the service repeatedly.
+We will use Hystrix [https://github.com/Netflix/Hystrix] based circuit breaker 
+
+### Load Balancers 
+Mostly all cloud infra providers have this feature. example AWS loadbalancer. As this is HTTP service we can use HTTP based load balancer than TCP based load balancers. If we want to enable GRPC endpoints we will need TCP based loadbalancer.
+
+
+
+
+
+
