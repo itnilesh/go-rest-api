@@ -209,7 +209,7 @@ This is producer-consumer pattern , can be impleted using queuing framework like
 3. Put item representing job is put in queue.
 4. Worker corresponding to job type picks up and processed.
 5. There should be some retry logic like failure queue /retry queue / success queue. You can use dead-letter routing technic available in rabbitMQ
-6. Persist result
+6. Persist results in DB
 7. Deque item from queue
 8. Notify user about result 
 
