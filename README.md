@@ -149,7 +149,7 @@ We need to see ideal config for CPU/Memory to meet our concurrent users SLAs.
 
 
 ### Metrics 
-we need number fo requests per sec (throughput) and latency (time taken for single request to server) based on which this app will autoscale.
+we need number fo requests per sec (throughput) and latency (time taken for single request to serve ) based on which this app will autoscale.
 
 Metrics scrapping  end-point
 
@@ -175,6 +175,60 @@ We will use Hystrix [https://github.com/Netflix/Hystrix] based circuit breaker
 
 ### Load Balancers 
 Mostly all cloud infra providers have this feature. example AWS loadbalancer. As this is HTTP service we can use HTTP based load balancer than TCP based load balancers. If we want to enable GRPC endpoints we will need TCP based loadbalancer.
+
+### Distributed Caching 
+If there is demand for particular results many time or result is compute heavy we can store in distributed cache like Redis [https://redis.io/]. Before serving request, we need to check in cache if it is there we need to return from cache else re-compoute results.
+Cache is good for mostly read only data. But if there are changes to data we need to invalidate cache.
+
+### Asyc processing for large input 
+Asyc processing in REST api is quiet tricky .
+
+If request can not be served in real time due to large processing time or need special resources to serve such requests we need async processing framework or job framework. Example we need to export details of all employees in CSV file.
+Such arragement needs REST apis designed for async processing using location header and redirects.
+
+Design of Asyc rest api 
+
+Approach ONE :
+
+1. Submit async request 
+2. Return with 202 Accpeted header and  job url in location header where user can check status of job and give expected time to poll.
+3. User will call job url in intervals specified and he will get status 
+4. Once job gets successfull , call to job status url (302 Redirect) will redirect to actual results.
+
+Approach TWO:
+
+1. Submit async job request with call-back endpoint. Call-back url has pre-defined API singnature.
+2. When async job completed, it will call call-back url with details of completed jobs.
+
+
+Flow for distributed processing once server gets request 
+This is producer-consumer pattern , can be impleted using queuing framework like RabbitMQ [https://www.rabbitmq.com/]
+
+1. User submits asyc job request.
+2. Convert request to queue item and persist in DB.
+3. Put item representing job is put in queue.
+4. Worker corresponding to job type picks up and processed.
+5. There should be some retry logic like failure queue /retry queue / success queue. You can use dead-letter routing technic available in rabbitMQ
+6. Persist result
+7. Deque item from queue
+8. Notify user about result 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
