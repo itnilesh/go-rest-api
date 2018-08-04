@@ -5,6 +5,7 @@
 Create a simple tutorial for beginners,  who want to write rest based micro-services in Go. 
 
 ### How to run?
+---------------------------
 
 Pull image from https://hub.docker.com/
 
@@ -48,8 +49,8 @@ docker run  -it -d -p 8888:8888  salpe/employee-service
 curl -X GET  http://localhost:8888/employees 
 ~~~
 
-
-API Docs 
+## API Docs 
+-----------------------------------
 
 Please refer swagger docs here 
 https://github.com/itnilesh/go-rest-api/blob/master/docs/api/employee-service.yaml
@@ -135,7 +136,13 @@ INFO[0000] Registerted rest end-point/employees/{id}
 ~~~
 
 
-----------------------------------------
+Deployment
+-----------------------------------------
+We need to deploy same application in multiuple clouds like AWS/GCP/Cloud Foundry
+Please refer 
+https://github.com/itnilesh/go-rest-api-deploy
+
+
  ## Future Enhancement
 -----------------------------------------
 
